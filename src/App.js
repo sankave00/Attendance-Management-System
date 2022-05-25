@@ -38,7 +38,7 @@ function App() {
                     <Route path="/student/giveattd" element={<Giveattd e={curemail} id={curid}/>} />
                 ) }
         {type === 1 && (
-                    <Route path="/student/viewattd" element={<Viewattdstu />} />
+                    <Route path="/student/viewattd" element={<Viewattdstu e={curemail} id={curid}/>} />
                 ) }
         {type === 2 && (
                     <Route path="/teacher/dashboard" element={<Teacherdash />} />
@@ -47,10 +47,10 @@ function App() {
                     <Route path="/teacher/takeattd" element={<Takeattd e={curemail} id={curid}/>} />
                 ) }
         {type === 2 && (
-                    <Route path="/teacher/viewattd" element={<Viewattd />} />
+                    <Route path="/teacher/viewattd" element={<Viewattd e={curemail} id={curid}/>} />
                 ) }
         {type === 2 && (
-                    <Route path="/teacher/modifyattd" element={<Modifyattd />} />
+                    <Route path="/teacher/modifyattd" element={<Modifyattd e={curemail} id={curid}/>} />
                 ) }
         {type === 2 && (
                     <Route path="/teacher/catupload" element={<Catupload />} />

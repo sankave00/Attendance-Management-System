@@ -35,18 +35,18 @@ const Newstudent = () => {
         firebase.firestore().collection('StudentAttd').add({
             SID: SID,
             Sem:sem,
-            Subj1Attd:0,
-            Subj1Name:sub1,
-            Subj2Attd:0,
-            Subj2Name:sub2,
-            Subj3Attd:0,
-            Subj3Name:sub3,
-            Subj4Attd:0,
-            Subj4Name:sub4,
-            Subj5Attd:0,
-            Subj5Name:sub5,
-            Subj6Attd:0,
-            Subj6Name:sub6
+            Sub1Attd:0,
+            Sub1Name:sub1,
+            Sub2Attd:0,
+            Sub2Name:sub2,
+            Sub3Attd:0,
+            Sub3Name:sub3,
+            Sub4Attd:0,
+            Sub4Name:sub4,
+            Sub5Attd:0,
+            Sub5Name:sub5,
+            Sub6Attd:0,
+            Sub6Name:sub6
 
         });
         alert("Added Successfully");
