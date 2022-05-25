@@ -7,6 +7,8 @@ import { getFirestore } from "firebase/firestore";
 
 const Viewattd = (props) => {
     let subjectstaken =[],sem=[],docid=[];
+    //const [totclass,settotclass]=useState(0);
+    let totclass=0;
     useEffect(() => {
         sem=[];
         subjectstaken=[];
@@ -17,6 +19,23 @@ const Viewattd = (props) => {
     const db = getFirestore();
     let s ="";
     const navigate = useNavigate();
+    async function getTot(sem1,subj1){
+      totclass=0;
+      const snapshot1 = await firebase.firestore().collection('TeacherAttd').get();
+                    snapshot1.docs.forEach(await function(doc) {
+                      var S = doc.data().Subjects;
+                      S.forEach(function(d){
+                        if(d['sem']==sem1 && d['subj']==subj1){
+                            //settotclass(d['class']);
+                            totclass=d['class'];
+                            console.log(totclass);
+                        }
+                          
+                      })
+                    })
+                    return totclass;
+      }
+
       const getdetails = async(event)=>{
         console.log(sem);
                 const snapshot = await firebase.firestore().collection('StudentAttd').get();
@@ -38,25 +57,51 @@ const Viewattd = (props) => {
                       console.log(docid);
                     }})
                     console.log(sem);
+                    
+
+
                     for(var i=0;i<sem.length;i++)
                     {
                         const div1 = document.createElement("div");
                         div1.id=sem[i];
                         var table = document.createElement('table');
+                        var tr = document.createElement('tr');   
+                            
+                            var th1 = document.createElement('th');
+                            var th2 = document.createElement('th');
+                            var th3 = document.createElement('th');
+                            var h1 = document.createTextNode("Subject");
+                            var h2 = document.createTextNode("Classes Attended");
+                            var h3 = document.createTextNode("Attd. Percentage");
+                            th1.appendChild(h1);
+                            th2.appendChild(h2);
+                            th3.appendChild(h3);
+                            tr.appendChild(h1);
+                            tr.appendChild(h2);
+                            tr.appendChild(h3);
+                            table.appendChild(tr);
                         for (var t = 0; t <6; t++){
                             var tr = document.createElement('tr');   
-
+                            totclass=await getTot(sem[i],subjectstaken[(i*6)+t]['SubName']);
                             var td1 = document.createElement('td');
                             var td2 = document.createElement('td');
+                            var td3 = document.createElement('td');
+                            console.log(totclass);
+                            if(totclass>0){
+                              var perc=((subjectstaken[(i*6)+t]['SubAttd']/totclass)*100).toFixed(2);
+                              var text3 = document.createTextNode(perc);
 
+                            }else text3 = document.createTextNode("-");
+                              
                             var text1 = document.createTextNode(subjectstaken[(i*6)+t]['SubName']);
                             var text2 = document.createTextNode(subjectstaken[(i*6)+t]['SubAttd']);
-
+                            
                             td1.appendChild(text1);
                             td2.appendChild(text2);
+                            td3.appendChild(text3);
                             tr.appendChild(td1);
                             tr.appendChild(td2);
-
+                            tr.appendChild(td3);
                             table.appendChild(tr);
                         }
                         var para = document.createElement("p");

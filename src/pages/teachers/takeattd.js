@@ -79,7 +79,7 @@ const Takeattd = (props) => {
             //console.log(`deleted: ${element.id}`);
             });
             navigate("/teacher/dashboard")
-        }, 10000);
+        }, 20000);
     }
 
     return (
