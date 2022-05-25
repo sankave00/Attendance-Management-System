@@ -13,6 +13,7 @@ const Newsubj = () => {
     const [TID, setTID] = useState("");
 
     const [sub, setsub] = useState("");
+    const [sem, setsem] = useState();
 //db.collection("users").doc(doc.id).update({foo: "bar"});
     const db = getFirestore();
     const navigate = useNavigate();
@@ -36,7 +37,8 @@ const Newsubj = () => {
         });
         let newsubjobj = {
             "subj":sub,
-            "class":0
+            "class":0,
+            "sem":sem
         };
         subjects.push(newsubjobj);
         firebase.firestore().collection('TeacherAttd').doc(docid).update({
@@ -71,7 +73,14 @@ const Newsubj = () => {
                 className="login__textBox"
                 value={sub}
                 onChange={(e) => setsub(e.target.value)}
-                placeholder="Subject1"
+                placeholder="Subject"
+              />
+              <input
+                type="number"
+                className="login__textBox"
+                value={sem}
+                onChange={(e) => setsem(e.target.value)}
+                placeholder="Subject Sem"
               />
               
               <button

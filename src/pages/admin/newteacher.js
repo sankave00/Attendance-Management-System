@@ -12,32 +12,55 @@ const Newteacher = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [TID, setTID] = useState("");
-    const [nosub, setnosub] = useState();
-    const [sub, setsub] = useState([]);
-    const [currsub, setcurrsub] = useState();
-
+    const [nosub, setnosub] = useState(0);
+    //const [sub, setsub] = useState([]);
+    let sub =[],mp={};
+    /*const [currsub, setcurrsub] = useState("");
+    const [sem,setsem]=useState();*/
+    let currsub="",sem;
     const db = getFirestore();
     const navigate = useNavigate();
-    var fieldsArray = [],subarr=[];
-    useEffect(() => {
-        for (var i = 0; i <= {nosub}; i++) {
-            fieldsArray.push(
-              <input
-                      type="text"
-                      className="login__textBox"
-                      value={currsub}
-                      onChange={(e) => setcurrsub(e.target.value)}
-                      placeholder="Subject1"
-                      onBlur={setsub(oldArray => [...oldArray, currsub])}
-              />
-            );}
+
+
+      const Addmore=async() => {
+         setnosub(nosub+1);
+        
+          var input = document.createElement("input");
+          input.type = "text";
+          input.placeholder = "Subject" + nosub;
+          input.className="login_textBox";
+          input.id="Subject" + nosub;
+          var input1 = document.createElement("input");
+          input1.type = "number";
+          input1.placeholder = "Subject" + nosub + "Sem";
+          input1.className="login_textBox";
+          input1.id="Subject" + nosub + "Sem";
+          
+          
+          document.getElementById("formincr").appendChild(input);
+          document.getElementById("formincr").appendChild(input1);
        
-      },[nosub]);
-    
+      }
     
     const SubmitHandler = async (event) => {
         event.preventDefault();
         const auth = getAuth();
+        for(var i=0;i<nosub;i++)
+        {
+          console.log(document.getElementById("Subject" + i).value);
+          console.log(document.getElementById("Subject" + i+"Sem").value);
+          currsub=document.getElementById("Subject" + i).value;
+          sem=document.getElementById("Subject" + i+"Sem").value;
+          console.log(currsub);
+          mp ={
+            "class":0,
+            "subj":currsub,
+            "sem":sem
+          }
+          console.log(sem,currsub);
+          sub.push(mp);
+          console.log(sub);
+        }
         createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
@@ -64,7 +87,8 @@ const Newteacher = () => {
     }
         return (
             <div className="login">
-            <div className="login__container">
+            <div className="login__container" >
+              <div id="formincr" className="login__container">
               <input
                 type="text"
                 className="login__textBox"
@@ -72,6 +96,7 @@ const Newteacher = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="E-mail Address"
               />
+              
               <input
                 type="password"
                 className="login__textBox"
@@ -85,20 +110,8 @@ const Newteacher = () => {
                 value={TID}
                 onChange={(e) => setTID(e.target.value)}
                 placeholder="Teacher Id"
-              />
-              <input
-                type="number"
-                className="login__textBox"
-                value={nosub}
-                onChange={(e) => setnosub(e.target.value)}
-                placeholder="No of Subjects"
-              />
-              {fieldsArray}
-              
-                  
-              
-              
-              
+              />             
+              </div>
               <button
                 className="login__btn"
                 onClick={SubmitHandler}
@@ -108,7 +121,9 @@ const Newteacher = () => {
       
               
             </div>
+            <button onClick={Addmore}>Add More Subjects</button>
           </div>
+          
     );
 };
 

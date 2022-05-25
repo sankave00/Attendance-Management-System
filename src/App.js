@@ -19,7 +19,8 @@ import { BrowserRouter as Router, Routes, Route,Navigate} from 'react-router-dom
 import { useState, createContext, useNavigate } from "react";
 function App() {
   const [type, settype] = useState(-1);
-
+  const [curemail,setcuremail]=useState("");
+  const [curid,setcurid]=useState("");
   
   /*useEffect(() => {
     console.log("type : ",type);
@@ -29,12 +30,12 @@ function App() {
     <Router history={history}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:id/login" element={<Login pass={settype}/>} />
+        <Route path="/:id/login" element={<Login pass={settype} e={setcuremail} i={setcurid} />}/>
         {type === 1 && (
                     <Route path="/student/dashboard" element={<Studentdash />} />
                 ) }
         {type === 1 && (
-                    <Route path="/student/giveattd" element={<Giveattd />} />
+                    <Route path="/student/giveattd" element={<Giveattd e={curemail} id={curid}/>} />
                 ) }
         {type === 1 && (
                     <Route path="/student/viewattd" element={<Viewattdstu />} />
@@ -43,7 +44,7 @@ function App() {
                     <Route path="/teacher/dashboard" element={<Teacherdash />} />
                 ) }
         {type === 2 && (
-                    <Route path="/teacher/takeattd" element={<Takeattd />} />
+                    <Route path="/teacher/takeattd" element={<Takeattd e={curemail} id={curid}/>} />
                 ) }
         {type === 2 && (
                     <Route path="/teacher/viewattd" element={<Viewattd />} />

@@ -29,23 +29,14 @@ function Login(props) {
         );
         const user = userCredential.user;
         let type1 = -1;
-        /*const usersRef = collection(db, "users");
-        const q = query(usersRef, where("email", "==", email));
-        const querySnapshot = await getDocs(q);
-        
-        console.log(querySnapshot);
-        querySnapshot.forEach((doc) => {
-          console.log(doc.data().email);
-            if (doc.data().email == email) {
-                type1 = doc.data().type;
-            }
-        });*/
         console.log(String(id));
+        let idnew;
         const snapshot = await firebase.firestore().collection('users').get()
       snapshot.docs.forEach((doc) => {
         console.log(doc.data());
           if (doc.data().email == email) {
               type1 = doc.data().type;
+              idnew=doc.data().id;
           }
       });
         switch(String(id))
@@ -58,6 +49,8 @@ function Login(props) {
         console.log(type);
         console.log(type1);
         props.pass(type);
+        props.e(email);
+        props.i(idnew);
         if(type===type1)
           navigate("/"+id+"/dashboard");
         else 
