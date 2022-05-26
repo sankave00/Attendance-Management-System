@@ -8,6 +8,7 @@ import Admindash from './pages/admindash';
 import Newstudent from './pages/admin/newstudent';
 import Newteacher from './pages/admin/newteacher';
 import Newsubj from './pages/admin/newsubj';
+import Newstu from './pages/admin/newstu';
 import Takeattd from './pages/teachers/takeattd';
 import Modifyattd from './pages/teachers/modifyattd';
 import Viewattd from './pages/teachers/viewattd';
@@ -65,7 +66,10 @@ function App() {
                     <Route path="/admin/newteacher" element={<Newteacher />} /> 
                 ) }
         {type === 3 && (
-                    <Route path="/admin/newsubj" element={<Newsubj />} /> 
+                    <Route path="/admin/newteachersubj" element={<Newsubj />} /> 
+                ) }
+        {type === 3 && (
+                    <Route path="/admin/newstudentsem" element={<Newstu />} /> 
                 ) }
         <Route path="*" element={<Navigate to="/" />} />       
       </Routes>

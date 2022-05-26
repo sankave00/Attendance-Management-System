@@ -13,8 +13,11 @@ const Admindash = () => {
             <Link to="/admin/newteacher">
                 <Button variant="outline-primary">New Teacher User</Button>
             </Link>
-            <Link to="/admin/newsubj">
-                <Button variant="outline-primary">Add subject</Button>
+            <Link to="/admin/newteachersubj">
+                <Button variant="outline-primary">Add Subject to Teacher</Button>
+            </Link>
+            <Link to="/admin/newstudentsem">
+                <Button variant="outline-primary">Add Sem to Student</Button>
             </Link>
             <Signout />
         </div>
