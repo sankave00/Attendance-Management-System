@@ -5,7 +5,6 @@ import firebase from "../../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
 import "../styles/login.css";
 import '../styles/headingstyle.css'
 const Newstudent = () => {

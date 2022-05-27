@@ -10,7 +10,6 @@ import 'mdbreact/dist/css/mdb.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-    
 root.render(
    
       <App />

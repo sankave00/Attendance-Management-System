@@ -6,8 +6,7 @@ import Footer from './Footer'
 import './styles/headingstyle.css'
 
 const Admindash = () => {
-    
-        return (
+    return (
             <>
         <div className="float-right mt-1 mr-1">
             <Signout />

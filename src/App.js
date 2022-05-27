@@ -1,7 +1,6 @@
 import React from 'react'
 import Login from './pages/login';
 import Home from './pages/home';
-import Signout from './pages/signout';
 import Studentdash from './pages/studentdash';
 import Teacherdash from './pages/teacherdash';
 import Admindash from './pages/admindash';

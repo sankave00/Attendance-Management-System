@@ -1,7 +1,5 @@
 import './styles/home.css'
 
-import {Button} from 'react-bootstrap'
-
 import { Link } from 'react-router-dom'
 
 import Footer from './Footer'

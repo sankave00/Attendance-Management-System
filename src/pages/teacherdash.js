@@ -4,7 +4,6 @@ import {Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Footer from './Footer'
 import './styles/headingstyle.css'
-
 const Teacherdash = () => {
     
         return (

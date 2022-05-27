@@ -2,10 +2,9 @@ import React,{useState} from "react";
 
 import { Link,useNavigate } from 'react-router-dom';
 import firebase from "../../firebase";
-import { collection, query, where, getDocs } from "firebase/firestore";
+
 import { getFirestore } from "firebase/firestore";
 import '../styles/headingstyle.css'
-
 
 const Giveattd = (props) => {
     

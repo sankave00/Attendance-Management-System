@@ -1,6 +1,5 @@
 import React from "react";
 import { getAuth, signOut } from "firebase/auth";
-import { history } from "../history";
 import { Link } from 'react-router-dom';
 
 

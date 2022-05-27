@@ -8,7 +8,6 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 
 import "./styles/login.css";
-import { propTypes } from "react-bootstrap/esm/Image";
 import Footer from './Footer'
 import '../pages/styles/headingstyle.css'
 
