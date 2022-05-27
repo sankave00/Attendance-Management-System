@@ -9,16 +9,22 @@ import { getFirestore } from "firebase/firestore";
 
 import "./styles/login.css";
 import { propTypes } from "react-bootstrap/esm/Image";
+<<<<<<< HEAD
 import Footer from './Footer'
 import '../pages/styles/headingstyle.css'
 
+=======
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
 function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let type=-1;
   const { id } = useParams();
   const navigate = useNavigate();
+<<<<<<< HEAD
   let name = id
+=======
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
 
   const db = getFirestore();
   const loginHandler = async (event) => {
@@ -71,11 +77,14 @@ function Login(props) {
     
 };
   return (
+<<<<<<< HEAD
     <>
     <div>
       <h1 className="heading" style={{textAlign:"center"}}>{name.charAt(0).toUpperCase() + name.slice(1)} Login</h1>
     </div>
     
+=======
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
     <div className="login">
       <div className="login__container">
         <input
@@ -98,11 +107,18 @@ function Login(props) {
         >
           Login
         </button>
+<<<<<<< HEAD
         <Footer/>
         
       </div>
     </div>
     </>
+=======
+
+        
+      </div>
+    </div>
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
   );
 }
 export default Login;

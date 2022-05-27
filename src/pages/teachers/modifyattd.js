@@ -4,8 +4,11 @@ import { Link,useNavigate } from 'react-router-dom';
 import firebase from "../../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
+<<<<<<< HEAD
 import '../styles/headingstyle.css'
 
+=======
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
 
 const Modifyattd = (props) => {
     
@@ -115,14 +118,21 @@ const Modifyattd = (props) => {
 
     }
     return (
+<<<<<<< HEAD
         <div>
             <h2 className="heading">Modify attendance</h2>
             <div style={{textAlign:"center"}}>
             <label for="subjects" className="heading">Choose the subject </label>
+=======
+        <div className="float-right mt-2 mr-2">
+            <p>Modify attendance</p>
+            <label for="subjects">Choose the subject </label>
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
 
             <select name="subject" id="subject" onClick={addHandler}>
             
             </select>
+<<<<<<< HEAD
             </div>
             <div style={{ margin:"auto"}}>
             <div id="stu">
@@ -130,6 +140,12 @@ const Modifyattd = (props) => {
           onChange={(e) => setid(e.target.value)}/>
             <button type="submit" className="btn btn-success" onClick={giveAttd} >Give Attendance</button>
             </div>
+=======
+            <div id="stu">
+            <input type="text" name="sid" id="stuid" placeholder="Enter Student ID" value={id}
+          onChange={(e) => setid(e.target.value)}/>
+            <button type="submit" onClick={giveAttd} >Give Attendance</button>
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
         </div>
         </div>
     );

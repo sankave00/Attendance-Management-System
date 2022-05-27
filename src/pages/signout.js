@@ -21,7 +21,11 @@ const SignOut = () => {
         <div className="float-right mt-2 mr-2">
             <Link to="/">
             <button
+<<<<<<< HEAD
                 className="btn btn-danger bg-transparent text-gray-200 p-2 rounded border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+=======
+                className="bg-transparent text-gray-200 p-2 rounded border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
                 onClick={signOutUser}
             >
                 Log Out

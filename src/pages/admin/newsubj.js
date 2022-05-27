@@ -7,7 +7,11 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 import "../styles/login.css";
+<<<<<<< HEAD
 import '../styles/headingstyle.css'
+=======
+
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
 const Newsubj = () => {
 
     const [TID, setTID] = useState("");
@@ -58,8 +62,11 @@ const Newsubj = () => {
 
     }
         return (
+<<<<<<< HEAD
           <>
             <h2 className="heading">Add new Subject : Teacher</h2>
+=======
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
             <div className="login">
             <div className="login__container">
               
@@ -95,7 +102,10 @@ const Newsubj = () => {
               
             </div>
           </div>
+<<<<<<< HEAD
           </>
+=======
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
     );
 };
 

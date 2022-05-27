@@ -83,15 +83,22 @@ const Takeattd = (props) => {
     }
 
     return (
+<<<<<<< HEAD
         <div>
             <h2 className="heading">Take attendance</h2>
 
             <div style={{textAlign:"center"}}>
             <label for="subjects" className="heading">Choose the subject </label>
+=======
+        <div className="float-right mt-2 mr-2">
+            <p>Take attendance</p>
+            <label for="subjects">Choose the subject </label>
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
 
             <select name="subject" id="subject" onClick={addHandler}>
             
             </select>
+<<<<<<< HEAD
             </div>
             <div style={{margin:"auto"}}>
             <button  type="submit" onClick={getOtp} className="btn btn-success">
@@ -102,6 +109,14 @@ const Takeattd = (props) => {
            
             </div>
 
+=======
+            <div onClick={getOtp}>
+                GENERATE OTP
+            </div>
+            <div style={{display:'none'}} id="otpdisp">
+                <p>OTP : {otp}</p>
+            </div>
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
 
         </div>
     );

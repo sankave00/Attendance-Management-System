@@ -2,13 +2,20 @@ import './styles/home.css'
 
 import {Button} from 'react-bootstrap'
 
+<<<<<<< HEAD
 import { Link } from 'react-router-dom'
 
 import Footer from './Footer'
+=======
+
+import { Link } from 'react-router-dom'
+
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
 const Home=()=>{
     console.log("Home");
     return(
         <>
+<<<<<<< HEAD
         <header style={{textAlign:"center"}}>
             <h2>Attendance Management System</h2>
         </header>
@@ -41,6 +48,19 @@ const Home=()=>{
         </Link>
         <Footer/>
         </div>
+=======
+        <Link to="/student/login">
+        <Button variant="outline-primary">Student Login</Button>
+        </Link>
+        <Link to="/teacher/login">
+        <Button variant="outline-primary">Teacher Login</Button>
+        </Link>
+        <Link to="/admin/login">
+        <Button variant="outline-primary">Admin Login</Button>
+        </Link>
+        
+        
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
         </>
     )
 }

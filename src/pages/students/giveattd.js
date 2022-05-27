@@ -4,8 +4,11 @@ import { Link,useNavigate } from 'react-router-dom';
 import firebase from "../../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
+<<<<<<< HEAD
 import '../styles/headingstyle.css'
 
+=======
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
 
 const Giveattd = (props) => {
     
@@ -126,22 +129,36 @@ const Giveattd = (props) => {
 
     }
     return (
+<<<<<<< HEAD
         <div>
         <h2 className="heading">Give Attendance</h2>
 
         <div style={{textAlign:"center"}}>
         <label for="subjects" className="heading">Choose the subject </label>
+=======
+        <div className="float-right mt-2 mr-2">
+        <p>Give attendance</p>
+        <label for="subjects">Choose the subject </label>
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
 
         <select name="subject" id="subject" onClick={addHandler} onChange={function(){
             document.getElementById("otpdisp").style.display="block";
         }}>
         
         </select>
+<<<<<<< HEAD
         </div>
         <div style={{display:'none' , margin:"auto"}} id="otpdisp">
             <input type="text" name="otp" id="stuotp"  placeholder="Enter OTP" style={{marginRight:"20px" , marginLeft:"650px" }} value={otp}
           onChange={(e) => setotp(e.target.value)}/>
             <button type="submit" className="btn btn-success" onClick={giveOtp} >Give OTP</button>
+=======
+        
+        <div style={{display:'none'}} id="otpdisp">
+            <input type="text" name="otp" id="stuotp" placeholder="Enter OTP" value={otp}
+          onChange={(e) => setotp(e.target.value)}/>
+            <button type="submit" onClick={giveOtp} >Give OTP</button>
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
         </div>
 
     </div>

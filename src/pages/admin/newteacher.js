@@ -7,7 +7,11 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 import "../styles/login.css";
+<<<<<<< HEAD
 import '../styles/headingstyle.css'
+=======
+
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
 const Newteacher = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -28,12 +32,20 @@ const Newteacher = () => {
           var input = document.createElement("input");
           input.type = "text";
           input.placeholder = "Subject" + nosub;
+<<<<<<< HEAD
           input.className="login__textBox";
+=======
+          input.className="login_textBox";
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
           input.id="Subject" + nosub;
           var input1 = document.createElement("input");
           input1.type = "number";
           input1.placeholder = "Subject" + nosub + "Sem";
+<<<<<<< HEAD
           input1.className="login__textBox";
+=======
+          input1.className="login_textBox";
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
           input1.id="Subject" + nosub + "Sem";
           
           
@@ -86,11 +98,17 @@ const Newteacher = () => {
 
     }
         return (
+<<<<<<< HEAD
           <>
             <h2 className="heading">Add new Teacher</h2>
             <div className="login">
             <div className="login__container" >
               <div id="formincr">
+=======
+            <div className="login">
+            <div className="login__container" >
+              <div id="formincr" className="login__container">
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
               <input
                 type="text"
                 className="login__textBox"
@@ -123,10 +141,16 @@ const Newteacher = () => {
       
               
             </div>
+<<<<<<< HEAD
             
           </div>
           <button style={{marginLeft:"46%",marginTop:"2%"}} onClick={Addmore}>Add More Subjects</button>
           </>
+=======
+            <button onClick={Addmore}>Add More Subjects</button>
+          </div>
+          
+>>>>>>> 4f76763bffbfff083c3008f92d91337b77bb862d
     );
 };
 
