@@ -130,4 +130,5 @@ const Newteacher = () => {
     );
 };
 
+
 export default Newteacher;
