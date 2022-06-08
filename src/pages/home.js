@@ -1,15 +1,20 @@
 import './styles/home.css'
 
 import { Link } from 'react-router-dom'
-
+import axios from 'axios'
 import Footer from './Footer'
 const Home=()=>{
     console.log("Home");
+    const clicked = async() =>{
+        const res = await axios.get("http://localhost:8000");   
+        console.log(res);
+    }
     return(
         <>
         <header style={{textAlign:"center"}}>
             <h2>Attendance Management System</h2>
         </header>
+        <button onClick={clicked}>Click me</button>
         <div id='homepage'>
         <Link to="/student/login">
         <button style={{border:"2px solid green" , marginRight:"20px"}}>
