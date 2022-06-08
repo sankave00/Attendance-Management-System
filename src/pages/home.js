@@ -7,7 +7,7 @@ const Home=()=>{
     console.log("Home");
     const clicked = async() =>{
         const res = await axios.get("http://localhost:8000");   
-        console.log(res);
+        console.log(res.data);
     }
     return(
         <>
